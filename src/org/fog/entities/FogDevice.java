@@ -124,7 +124,8 @@ public class FogDevice extends PowerDatacenter {
 					+ " : Error - this entity has no PEs. Therefore, can't process any Cloudlets.");
 		}
 		// stores id of this class
-		getCharacteristics().setId(super.getId());
+		getCharacteristics();
+                //.setId(super.getId());
 		
 		applicationMap = new HashMap<String, Application>();
 		appToModulesMap = new HashMap<String, List<String>>();
@@ -984,4 +985,27 @@ public class FogDevice extends PowerDatacenter {
 			Map<String, Map<String, Integer>> moduleInstanceCount) {
 		this.moduleInstanceCount = moduleInstanceCount;
 	}
+        
+        // Atributos adicionados
+        protected int ram;
+        protected int mips;
+        protected String nodeName;
+        
+        // Métodos adicionados
+//        public void setRam(int ram){
+//            this.ram = ram;
+//        }
+        public String getNodeName(){
+            return nodeName;
+        }
+//        public void setNodeName(String nodeName){
+//            this.nodeName = nodeName;
+//        }
+        public int getMips(){
+            return mips;
+        }
+//        //Declarar no inicio "protected int mips;" - classe FogDevice
+//        public void setMips(int mips){
+//            this.mips = mips;
+//        }
 }
